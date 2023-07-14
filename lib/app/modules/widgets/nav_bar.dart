@@ -1,13 +1,11 @@
-import 'dart:developer';
-import 'dart:ffi';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'dart:ui';
+
+import 'package:evalu8/app/modules/HomePage.dart';
+import 'package:evalu8/app/modules/SearchPage.dart';
 import 'package:flutter/material.dart';
+
 import '../../core/values/colors.dart';
 import '../FollowingPage.dart';
-import '../HomePage.dart';
-import '../SearchPage.dart';
-
-void main() => runApp(MaterialApp(home: BottomNavBar()));
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -15,63 +13,77 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _page = 0;
-  // GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        bottomNavigationBar: CurvedNavigationBar(
-          height: 60,
-          // key: _bottomNavigationKey,
-          index: 0,
-          items: [
-            Icon(Icons.add),
-            Icon(Icons.add),
-            Icon(Icons.add),
-            // CurvedNavigationBarItem(
-            //   child: Image(
-            //     image: AssetImage('images/logo.png'),
-            //     color: yellow,
-            //     height: 24,
-            //     width: 24,
-            //   ),
-            //   label: 'Main',
-            // ),
-            // CurvedNavigationBarItem(
-            //   child: Icon(
-            //     Icons.search,
-            //     color: yellow,
-            //   ),
-            //   label: 'Search',
-            // ),
-            // CurvedNavigationBarItem(
-            //   child: Icon(
-            //     Icons.check_circle,
-            //     color: yellow,
-            //   ),
-            //   label: 'Follwing',
-            // ),
-          ],
-          color: Colors.white,
-          buttonBackgroundColor: Colors.white,
-          backgroundColor: blue,
-          animationCurve: Curves.easeInOut,
-          animationDuration: Duration(milliseconds: 600),
-          onTap: (index) {
-            setState(() {
-              _page = index;
-            });
-          },
-          letIndexChange: (index) => true,
-        ),
-        body: _page == 0
-            ? HomePage()
-            : _page == 1
-                ? SearchPage()
-                : FollowingPage(),
+    double displayWidth = MediaQuery.of(context).size.width;
+
+    final List<Widget> _tabs = [
+      HomePage(),
+      SearchPage(),
+      FollowingPage(),
+    ];
+    return Scaffold(
+      body: _tabs[_currentIndex],
+      bottomNavigationBar: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          ClipRect(
+              child: BackdropFilter(
+                  filter: ImageFilter.blur(
+                    sigmaX: 1.0,
+                    sigmaY: 1.0,
+                  ),
+                  child: Container(
+                      width: double.maxFinite,
+                      height: displayWidth * .180,
+                      color: Colors.black.withOpacity(0)))),
+          bottomWidget(),
+        ],
+      ),
+    );
+  }
+
+  Widget bottomWidget() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 30.0, left: 15, right: 15.0),
+      child: BottomNavigationBar(
+        fixedColor: yellow,
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: _currentIndex == 0
+                ? Image.asset(
+                    'assets/images/logo.png',
+                    width: 24,
+                    height: 24,
+                  )
+                : Image.asset(
+                    'assets/images/greylogo.png',
+                    width: 24,
+                    height: 24,
+                  ),
+            label: 'Main',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+            ),
+            label: 'Search',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(
+              Icons.check_circle,
+            ),
+            label: 'Following',
+          ),
+        ],
       ),
     );
   }
