@@ -2,7 +2,8 @@ import 'package:evalu8/app/modules/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/values/colors.dart';
-import 'category_list.dart';
+import 'Item_List.dart';
+import 'New_products.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -108,7 +109,7 @@ class _BodyState extends State<Body> {
               padding: EdgeInsets.only(left: 15),
               child: Text(
                 'Explore by Category',
-                style: TextStyle(fontSize: 14),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -119,7 +120,7 @@ class _BodyState extends State<Body> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                CategoryList(
+                ItemList(
                   activeBackgroundColor: Colors.amberAccent,
                   inactiveBackgroundColor: blue,
 
@@ -181,17 +182,94 @@ class _BodyState extends State<Body> {
                 padding: EdgeInsets.only(left: 15.0),
                 child: Text(
                   'Recent Actitvity',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ),
             ],
           ),
         ),
         Product_card(),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 10,
         ),
-        Product_card(),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Text(
+                  'New',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: ItemList(
+              activeBackgroundColor: Colors.transparent,
+              inactiveBackgroundColor: Colors.transparent,
+              itemPadding: EdgeInsets.all(0.0),
+              itemMargin: EdgeInsets.only(right: 8.0),
+              items: [
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+              ],
+              itemsCount: 6,
+              onSelected: (int? index) {},
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Text(
+                  'Top Rated',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: ItemList(
+              activeBackgroundColor: Colors.transparent,
+              inactiveBackgroundColor: Colors.transparent,
+              itemPadding: EdgeInsets.all(0.0),
+              itemMargin: EdgeInsets.only(right: 8.0),
+              items: [
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+                NewProduct(),
+              ],
+              itemsCount: 6,
+              onSelected: (int? index) {},
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 15,
+        )
       ],
     );
   }

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-enum Direction { vertical, horizontal }
-
 typedef OnSelected = void Function(int? index);
 
-class CategoryList extends StatefulWidget {
+class ItemList extends StatefulWidget {
   int? initIndex;
   final int itemsCount;
   final List<Widget?> items;
@@ -15,7 +13,7 @@ class CategoryList extends StatefulWidget {
   final EdgeInsetsGeometry? itemMargin;
   final BorderRadius? itemBorderRadius;
 
-  CategoryList({
+  ItemList({
     Key? key,
     required this.itemsCount,
     required this.items,
@@ -29,10 +27,10 @@ class CategoryList extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CategoryList> createState() => _CategoryListState();
+  State<ItemList> createState() => _ItemListState();
 }
 
-class _CategoryListState extends State<CategoryList> {
+class _ItemListState extends State<ItemList> {
   int? _currentIndex;
   Color? activeBackgroundColor;
   Color? inactiveBackgroundColor;

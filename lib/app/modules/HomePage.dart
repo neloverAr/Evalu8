@@ -2,13 +2,7 @@ import 'dart:ui';
 
 import 'package:evalu8/app/modules/widgets/Body.dart';
 import 'package:evalu8/app/modules/widgets/appbar.dart';
-import 'package:evalu8/app/modules/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
-
-import '../core/values/colors.dart';
-import 'FollowingPage.dart';
-import 'SearchPage.dart';
-import 'widgets/product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
