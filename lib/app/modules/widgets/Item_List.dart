@@ -68,6 +68,7 @@ class _ItemListState extends State<ItemList> {
     );
   }
 
+//
   GestureDetector singleItem(int index) {
     return GestureDetector(
       onTap: () => _handleOnTap(index),
