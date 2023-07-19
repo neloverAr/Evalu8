@@ -45,7 +45,7 @@ class _BodyState extends State<Body> {
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12), color: yellow),
-                  child: const Row(
+                  child:  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
@@ -76,7 +76,7 @@ class _BodyState extends State<Body> {
                     borderRadius: BorderRadius.circular(10),
                     color: blue,
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
@@ -103,7 +103,7 @@ class _BodyState extends State<Body> {
             ],
           ),
         ),
-        const Row(
+         Row(
           children: [
             Padding(
               padding: EdgeInsets.only(left: 15),
@@ -174,7 +174,7 @@ class _BodyState extends State<Body> {
             ),
           ),
         ),
-        const Padding(
+         Padding(
           padding: EdgeInsets.only(bottom: 8),
           child: Row(
             children: [
