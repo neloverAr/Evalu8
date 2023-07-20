@@ -13,10 +13,11 @@ class MyApp extends StatelessWidget {
     //StorageService storageService = Get.find();
     //Get.put(NotificationController());
     return  GetMaterialApp(
-      getPages: routes,
+      initialRoute: '/SplachPage',
+      getPages: AppPages.routes,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      //home: const SplashScreen(),
+     // home: const SplashScreen(),
     );
   }
 }
