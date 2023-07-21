@@ -13,8 +13,8 @@ class Rating_result extends StatelessWidget {
         size: 20.0,
         filledIconData: Icons.star,
         halfFilledIconData: Icons.star,
-        color: yellow,
-        borderColor: yellow,
+        color: primaryColor,
+        borderColor: primaryColor,
         spacing: 3.0);
   }
 }

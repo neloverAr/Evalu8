@@ -49,7 +49,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 30.0, left: 15, right: 15.0),
       child: BottomNavigationBar(
-        fixedColor: yellow,
+        fixedColor: secondaryColor,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {

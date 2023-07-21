@@ -32,7 +32,7 @@ class OnBoardingController extends GetxController {
   }
 
   void goToStart(){
-    Get.toNamed("home");
+    Get.toNamed("/LoginPage");
   }
 
 

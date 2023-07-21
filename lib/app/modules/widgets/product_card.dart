@@ -55,21 +55,21 @@ class Product_card extends StatelessWidget {
                           padding: EdgeInsets.only(left: 8.0, right: 8.0),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: yellow,
+                            color: secondaryColor,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: const [
                               Icon(
                                 Icons.star,
-                                color: blue,
+                                color: primaryColor,
                                 size: 8,//16
                               ),
                               Text(
                                 '  4.5 ',
                                 style: TextStyle(
                                     fontSize: 10,
-                                    color: blue,
+                                    color: primaryColor,
                                     fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -86,7 +86,7 @@ class Product_card extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: blue),
+                              color: primaryColor),
                         ),
                       ],
                     ),
@@ -130,7 +130,8 @@ class Product_card extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
-                                  color: blue),
+                                  color: primaryColor
+                              ),
                             ),
                             Text(
                               '1 hour ago',

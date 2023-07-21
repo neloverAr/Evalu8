@@ -38,14 +38,14 @@ class OnBoardingWidget extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
-                      color: primaryColor,
+                      color: secondaryColor,
                       fontFamily: AppThemes.getBoldFontFamily())),
               TextSpan(
                   text: object.sub_title_Two,
                   style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
-                      color: secondaryColor,
+                      color: primaryColor,
                       fontFamily: AppThemes.getBoldFontFamily())),
             ]),
           ),

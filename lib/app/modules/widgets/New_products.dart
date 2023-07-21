@@ -41,7 +41,7 @@ class _NewProductState extends State<NewProduct> {
                       ? Icon(
                           Icons.check_circle_outline,
                           size: 20,
-                          color: yellow,
+                          color: secondaryColor,
                         )
                       : Icon(
                           Icons.add_circle_outline_rounded,
@@ -54,21 +54,21 @@ class _NewProductState extends State<NewProduct> {
                     padding: EdgeInsets.only(left: 8.0, right: 8.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: yellow,
+                      color: secondaryColor,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
                           Icons.star,
-                          color: blue,
+                          color: primaryColor,
                           size: 8, //16
                         ),
                         Text(
                           '  4.5 ',
                           style: TextStyle(
                               fontSize: 10,
-                              color: blue,
+                              color: primaryColor,
                               fontWeight: FontWeight.bold),
                         ),
                       ],

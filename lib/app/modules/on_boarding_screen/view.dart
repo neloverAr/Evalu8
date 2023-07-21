@@ -48,7 +48,7 @@ class OnBoarding extends StatelessWidget {
                         width: index==controller.currentIndex.value?32:12,
                         height: 5,
                         decoration: BoxDecoration (
-                            color: index==controller.currentIndex.value?primaryColor:Color(0xFFD9D9D9),
+                            color: index==controller.currentIndex.value?secondaryColor:Color(0xFFD9D9D9),
                             borderRadius: BorderRadius.circular (10))
                     )
 
@@ -65,7 +65,7 @@ class OnBoarding extends StatelessWidget {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       elevation: 0,
-                      backgroundColor: secondaryColor,
+                      backgroundColor: primaryColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                   onPressed: () {

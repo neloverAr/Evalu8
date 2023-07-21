@@ -44,7 +44,8 @@ class _BodyState extends State<Body> {
                 child: Container(
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12), color: yellow),
+                      borderRadius: BorderRadius.circular(12), color: secondaryColor
+                  ),
                   child:  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -74,7 +75,7 @@ class _BodyState extends State<Body> {
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: blue,
+                    color: primaryColor,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +85,7 @@ class _BodyState extends State<Body> {
                           Icon(
                             Icons.swipe_up_outlined,
                             size: 25,
-                            color: yellow,
+                            color: secondaryColor,
                           ),
                           SizedBox(
                             height: 20.0,
@@ -122,7 +123,7 @@ class _BodyState extends State<Body> {
               children: [
                 ItemList(
                   activeBackgroundColor: Colors.amberAccent,
-                  inactiveBackgroundColor: blue,
+                  inactiveBackgroundColor: primaryColor,
 
                   itemMargin: const EdgeInsets.all(8),
                   itemBorderRadius: const BorderRadius.all(Radius.circular(50)),
