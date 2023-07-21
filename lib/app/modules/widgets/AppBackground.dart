@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../core/values/colors.dart';
 import '../../core/values/icons.dart';
+import '../../core/values/images_path.dart';
 
 class AppBackground extends StatelessWidget {
   const AppBackground({Key? key}) : super(key: key);
@@ -17,7 +19,7 @@ class AppBackground extends StatelessWidget {
             EdgeInsets.only(top: MediaQuery.of(context).padding.top + 12),
             child: SizedBox(
               width: 100,
-              child: SvgPicture.asset(logo),
+              child: SvgPicture.asset(backgroundYellow,fit: BoxFit.fill,),
             ),
           ),
           const SizedBox(

@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/values/colors.dart';
+import '../../../routes/pages_routes.dart';
 import '../widgets/custom_textfield.dart';
 
 class LoginPage extends StatelessWidget {
@@ -55,7 +56,7 @@ class LoginPage extends StatelessWidget {
                             isLoading: false,
                             title: "Log in",
                             onPressed: () {
-                              Get.toNamed("/home");
+                              Get.toNamed(AppRoutes.home);
                             },
                           ),
                         ),

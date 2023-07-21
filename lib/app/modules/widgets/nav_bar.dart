@@ -20,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     double displayWidth = MediaQuery.of(context).size.width;
 
     final List<Widget> _tabs = [
-      HomePage(),
+      // HomePage(),
       SearchPage(),
       FollowingPage(),
     ];

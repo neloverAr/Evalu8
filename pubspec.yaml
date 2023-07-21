@@ -43,6 +43,7 @@ dependencies:
   smooth_star_rating_null_safety: ^1.0.4+2
   flutter_svg: ^2.0.5
   pin_code_fields: ^8.0.1
+  pinput: ^2.2.31
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +64,10 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
-    # - assets/images/icons/
+    - assets/images/icons/Verify Password.svg
+    - assets/images/YellowBackground.svg
+    - assets/images/icons/
+    - assets/images/slider.svg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

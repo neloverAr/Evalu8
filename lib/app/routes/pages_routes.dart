@@ -1,3 +1,4 @@
+import 'package:evalu8/app/modules/home/view.dart';
 import 'package:evalu8/app/modules/on_boarding_screen/view.dart';
 import 'package:evalu8/app/modules/splash/view.dart';
 import 'package:get/get.dart';
@@ -7,20 +8,33 @@ import '../modules/Auth/login/EmailForForgetPassword.dart';
 import '../modules/Auth/login/view.dart';
 import '../modules/Auth/signup/view.dart';
 import '../modules/FollowingPage.dart';
+import '../modules/HomePage.dart';
 import '../modules/SearchPage.dart';
 import '../modules/widgets/nav_bar.dart';
 class AppPages{
   static List<GetPage<dynamic>>? routes = [
     //GetPage(name: "/splash_screen", page:()=> SplashScreen()),
-    GetPage(name: "/", page: () => SplashPage()),
-    GetPage(name: "/splash", page: () => SplashPage()),
-    GetPage(name: '/OnBoarding', page: () => OnBoarding()),
-    GetPage(name: "/home", page: () => BottomNavBar()),
-    GetPage(name: "/SearchPage", page: () => SearchPage()),
-    GetPage(name: "/FollowingPage", page: () => FollowingPage()),
-    GetPage(name: '/SignUpPage', page: () => SignUpPage()),
-    GetPage(name: '/LoginPage', page: () => LoginPage()),
-    GetPage(name: '/EmailForForgetPasswordPage', page: () => EmailForForgetPasswordPage()),
-    GetPage(name: '/CodeVerficationPage', page: () => CodeVerficationPage()),
+    GetPage(name: AppRoutes.splash, page: () => SplashPage()),
+    GetPage(name: AppRoutes.splash, page: () => SplashPage()),
+    GetPage(name: AppRoutes.OnBoarding, page: () => OnBoarding()),
+    GetPage(name: AppRoutes.home, page: () => HomePage()),
+    GetPage(name: AppRoutes.searchPage, page: () => SearchPage()),
+    GetPage(name: AppRoutes.followingPage, page: () => FollowingPage()),
+    GetPage(name: AppRoutes.signUpPage, page: () => SignUpPage()),
+    GetPage(name: AppRoutes.loginPage, page: () => LoginPage()),
+    GetPage(name: AppRoutes.emailForForgetPasswordPage, page: () => EmailForForgetPasswordPage()),
+    GetPage(name: AppRoutes.codeVerficationPage, page: () => CodeVerficationPage()),
   ];
+}
+
+class AppRoutes {
+  static const String splash = "/";
+  static const String OnBoarding = '/OnBoarding';
+  static const String home = '/home';
+  static const String searchPage = "/SearchPage";
+  static const String followingPage = "/FollowingPage";
+  static const String signUpPage = '/SignUpPage';
+  static const String loginPage = '/LoginPage';
+  static const String emailForForgetPasswordPage = '/EmailForForgetPasswordPage';
+  static const String codeVerficationPage = '/CodeVerficationPage';
 }
