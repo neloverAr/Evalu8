@@ -3,6 +3,7 @@ import 'package:evalu8/app/modules/following/view.dart';
 import 'package:evalu8/app/modules/home/view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../data/models/PageData.dart';
 import '../search/view.dart';
 class MainNavigationController extends GetxController{
   int index = 0;
@@ -34,12 +35,3 @@ class MainNavigationController extends GetxController{
   }
 }
 
-class PageData {
-  String path;
-  Widget page;
-
-  PageData(
-      {
-        required this.page,
-        required this.path});
-}
