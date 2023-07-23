@@ -56,7 +56,8 @@ class LoginPage extends StatelessWidget {
                             isLoading: false,
                             title: "Log in",
                             onPressed: () {
-                              Get.toNamed(AppRoutes.home);
+                              Get.offAllNamed(AppRoutes.main);
+                             // Get.toNamed(AppRoutes.home);
                             },
                           ),
                         ),

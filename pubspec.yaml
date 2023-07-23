@@ -67,7 +67,7 @@ flutter:
     - assets/images/icons/Verify Password.svg
     - assets/images/YellowBackground.svg
     - assets/images/icons/
-    - assets/images/slider.svg
+    - assets/images/slider.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

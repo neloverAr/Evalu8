@@ -1,11 +1,10 @@
 import 'dart:ui';
 
 import 'package:evalu8/app/modules/HomePage.dart';
-import 'package:evalu8/app/modules/SearchPage.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/values/colors.dart';
-import '../FollowingPage.dart';
+
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -21,8 +20,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
     final List<Widget> _tabs = [
       // HomePage(),
-      SearchPage(),
-      FollowingPage(),
+      // SearchPage(),
+      // FollowingPage(),
     ];
     return Scaffold(
       body: _tabs[_currentIndex],

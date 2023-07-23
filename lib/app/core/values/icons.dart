@@ -13,3 +13,6 @@ const profile = "${baseUrl}profile.svg";
 const section_one_click = "${baseUrl}section_one_click.svg";
 const section_one_comment = "${baseUrl}section_one_comment.svg";
 const tree = "${baseUrl}tree.svg";
+const home_icon = "${baseUrl}home_icon.svg";
+const search_icon = "${baseUrl}search_icon.svg";
+const checked_icon = "${baseUrl}checked_icon.svg";
