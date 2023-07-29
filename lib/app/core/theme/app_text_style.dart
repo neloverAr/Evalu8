@@ -16,12 +16,40 @@ class AppTextStyles {
     color: Colors.black,
     fontFamily: AppThemes.getRegularFontFamily(),
   );
+  static TextStyle get r18 => TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    height: 1.3,
+    color: Colors.black,
+    fontFamily: AppThemes.getRegularFontFamily(),
+  );
   static TextStyle get r10Black => TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w400,
     height: 1.3,
     color: Colors.black,
     fontFamily: AppThemes.getRegularFontFamily(),
+  );
+  static TextStyle get b18 => TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    height: 1.3,
+    color: Colors.black,
+    fontFamily: AppThemes.getBoldFontFamily(),
+  );
+  static TextStyle get b12 => TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    height: 1.3,
+    color: Colors.black,
+    fontFamily: AppThemes.getBoldFontFamily(),
+  );
+  static TextStyle get b14 => TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    height: 1.3,
+    color: Colors.black,
+    fontFamily: AppThemes.getBoldFontFamily(),
   );
   static TextStyle get r5Black => TextStyle(
     fontSize: 5,
@@ -40,6 +68,13 @@ class AppTextStyles {
   static TextStyle get r16Black => TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
+    height: 1.3,
+    color: Colors.black,
+    fontFamily: AppThemes.getRegularFontFamily(),
+  );
+  static TextStyle get r12 => TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
     height: 1.3,
     color: Colors.black,
     fontFamily: AppThemes.getRegularFontFamily(),

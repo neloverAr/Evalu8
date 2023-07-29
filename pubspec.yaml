@@ -44,6 +44,7 @@ dependencies:
   flutter_svg: ^2.0.5
   pin_code_fields: ^8.0.1
   pinput: ^2.2.31
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,9 @@ flutter:
     - assets/images/YellowBackground.svg
     - assets/images/icons/
     - assets/images/slider.png
+    - assets/images/icons/girl.svg
+    - assets/images/icons/boy.svg
+    - assets/images/gender_girl.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -93,10 +97,10 @@ flutter:
   fonts:
     - family: FuzzyBubbles-Bold
       fonts:
-        - asset: assets/fonts/FuzzyBubbles-Bold.ttf
+        - asset: assets/fonts/FiraSans-Bold.ttf
     - family: FuzzyBubbles-Regular
       fonts:
-        - asset: assets/fonts/FuzzyBubbles-Regular.ttf
+        - asset: assets/fonts/FiraSans-Regular.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

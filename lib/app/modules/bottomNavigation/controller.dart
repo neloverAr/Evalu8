@@ -8,6 +8,7 @@ import '../search/view.dart';
 class MainNavigationController extends GetxController{
   int index = 0;
   late List<PageData> pages;
+  final GlobalKey<ScaffoldState> key = GlobalKey();
   setPages() {
     pages = [
       PageData(
@@ -17,7 +18,7 @@ class MainNavigationController extends GetxController{
           page: const SearchPage(),
           path: search_icon),
       PageData(
-          page: const AllFollowingPage(),
+          page:  AllFollowingPage(),
           path: checked_icon),
     ];
   }

@@ -8,15 +8,11 @@ import '../../functions/check-internet.dart';
 import 'status_request.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart' ;
-
-
 class Crud{
   StorageService storageService = Get.find();
-
   Future<Either<StatusRequest, Map>> postData(String linkUrl,Map data) async {
    try{
      if(await checkInternet()){
-
        var response = await http.post(Uri.parse(linkUrl),body: data,headers: {
          "Authorization":"Bearer ${storageService.read("token")}",
          "Accept-Language":"ar"
@@ -28,7 +24,6 @@ class Crud{
          Map responseBody = jsonDecode(response.body);
          Get.defaultDialog(title: "⚠",middleText:responseBody['message']);
          return const Left(StatusRequest.serverFailure);
-
        }
      }
      //else

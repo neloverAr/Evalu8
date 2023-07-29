@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
                 color: Colors.black, fontWeight: FontWeight.w400, fontSize: 18),
           ),
           const SizedBox(
-            height: 16,
+            height: 4,
           ),
           Container(
             child: TextFormField(

@@ -1,8 +1,8 @@
 class AppThemes {
   static String getBoldFontFamily() {
-    return  "FuzzyBubbles-Bold";
+    return  "FiraSans-Bold-Bold";
   }
   static String getRegularFontFamily() {
-    return  "FuzzyBubbles-Regular";
+    return  "FiraSans-Bold-Regular";
   }
 }

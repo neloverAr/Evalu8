@@ -7,4 +7,12 @@ const splashScreen = "${baseUrl}splashScreen.png";
 const backgroundYellow = "${baseUrl}YellowBackground.svg";
 const slider = "${baseUrl}slider.png";
 const product = "${baseUrl}product.png";
+const drawer = "${baseUrl}Drawer.png";
+const gender_girl = "${baseUrl}gender_girl.png";
+const gender_boy = "${baseUrl}gender_boy.png";
+const selected_gender_girl = "${baseUrl}selected_gender_girl.png";
+const selected_gender_boy = "${baseUrl}selected_gender_boy.png";
+const avatar = "${baseUrl}avatar.png";
+
+
 //const avatarUrl = "${baseUrl}avatar.png";

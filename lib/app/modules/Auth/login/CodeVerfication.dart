@@ -9,34 +9,34 @@ class CodeVerficationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            AppBackground(),
-            Positioned(
-              top: 90,
-              child: Container(
-                child: Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 74,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+    return Scaffold(body: SingleChildScrollView(
+      child: Column(
+        //fit: StackFit.loose,
+        children: [
+          AppBackground(hasIcon: true,),
+          Center(child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Container(
+              child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 74,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
                             Text(
                               'Check Your email',
                               style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.w400),
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+
                             ),
                             SizedBox(
                               height: 16,
@@ -75,28 +75,31 @@ class CodeVerficationPage extends StatelessWidget {
                               appContext: context,
                             ),
                           ],),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(24),
+                        child: AppButton(
+                          width: double.infinity,
+                          fontWeight: FontWeight.w800,
+                          elevation: 0,
+                          fontSize: 18,
+                          color: primaryColor,
+                          borderRadius: 12,
+                          isLoading: false,
+                          title: "Verify",
+                          onPressed: () {},
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(24),
-                          child: AppButton(
-                            width: double.infinity,
-                            fontWeight: FontWeight.w800,
-                            elevation: 0,
-                            fontSize: 18,
-                            color: primaryColor,
-                            borderRadius: 12,
-                            isLoading: false,
-                            title: "Verify",
-                            onPressed: () {},
-                          ),
-                        ),
-                      ],
-                    )),
-              ),
+                      ),
+                      Text('1:00'),
+                      SizedBox(height: 16,),
+                      Text('Resend code'),
+                      SizedBox(height: 16,),
+                    ],
+                  )),
             ),
-          ],
-        ),
+          ),),
+        ],
       ),
-    );
+    ),);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:evalu8/app/core/values/colors.dart';
+import 'package:evalu8/app/modules/drawer/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -17,7 +18,9 @@ class MainNavigationLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<MainNavigationController>(builder: (_) {
       return Scaffold(
+        key: controller.key,
         appBar: CustomAppBar(),
+        drawer: AppDrawerWidget(),
         body: SafeArea(
           child: Stack(children: [
             controller.pages[controller.index].page,
@@ -55,7 +58,6 @@ class MainNavigationLayout extends StatelessWidget {
           ],),
         ),
       );
-
     });
   }
 }

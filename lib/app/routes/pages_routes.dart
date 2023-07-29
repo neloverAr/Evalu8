@@ -1,3 +1,4 @@
+import 'package:evalu8/app/modules/gender/view.dart';
 import 'package:evalu8/app/modules/home/view.dart';
 import 'package:evalu8/app/modules/on_boarding_screen/view.dart';
 import 'package:evalu8/app/modules/splash/view.dart';
@@ -9,6 +10,7 @@ import '../modules/Auth/login/view.dart';
 import '../modules/Auth/signup/view.dart';
 import '../modules/HomePage.dart';
 import '../modules/bottomNavigation/main_navigation_Layout.dart';
+import '../modules/dateOfBirthday/view.dart';
 import '../modules/following/view.dart';
 import '../modules/search/view.dart';
 import '../modules/widgets/nav_bar.dart';
@@ -33,6 +35,14 @@ class AppPages {
       name: AppRoutes.main,
       page: () => MainNavigationLayout(),
     ),
+    GetPage(
+      name: AppRoutes.gender,
+      page: () => GenderSelectionPage(),
+    ),
+    GetPage(
+      name: AppRoutes.dateOfBirthday,
+      page: () => DateOfBirthdayPage(),
+    ),
   ];
 }
 
@@ -48,4 +58,7 @@ class AppRoutes {
       '/EmailForForgetPasswordPage';
   static const String codeVerficationPage = '/CodeVerficationPage';
   static const String main = "/main";
+  static const String gender = '/GenderSelectionPage';
+  static const String dateOfBirthday = '/DateOfBirthdayPage';
+
 }
