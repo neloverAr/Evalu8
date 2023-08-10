@@ -13,6 +13,4 @@ const gender_boy = "${baseUrl}gender_boy.png";
 const selected_gender_girl = "${baseUrl}selected_gender_girl.png";
 const selected_gender_boy = "${baseUrl}selected_gender_boy.png";
 const avatar = "${baseUrl}avatar.png";
-
-
-//const avatarUrl = "${baseUrl}avatar.png";
+const product_sample = "${baseUrl}product_sample.png";

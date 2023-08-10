@@ -37,6 +37,13 @@ class AppTextStyles {
     color: Colors.black,
     fontFamily: AppThemes.getBoldFontFamily(),
   );
+  static TextStyle get b20 => TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    height: 1.3,
+    color: Colors.black,
+    fontFamily: AppThemes.getBoldFontFamily(),
+  );
   static TextStyle get b12 => TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
@@ -54,6 +61,13 @@ class AppTextStyles {
   static TextStyle get r5Black => TextStyle(
     fontSize: 5,
     fontWeight: FontWeight.w400,
+    height: 1.3,
+    color: Colors.black,
+    fontFamily: AppThemes.getRegularFontFamily(),
+  );
+  static TextStyle get r18700w => TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
     height: 1.3,
     color: Colors.black,
     fontFamily: AppThemes.getRegularFontFamily(),

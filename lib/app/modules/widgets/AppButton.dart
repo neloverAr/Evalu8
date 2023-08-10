@@ -13,6 +13,8 @@ class AppButton extends StatelessWidget {
   final bool isLoading;
   final FontWeight fontWeight;
   final bool? isdisabled;
+  final TextStyle? style;
+  final  TextAlign? textAlign;
   const AppButton(
       {Key? key,
         required this.color,
@@ -26,7 +28,7 @@ class AppButton extends StatelessWidget {
         this.fontSize = 16,
         required this.isLoading,
         required this.title,
-        required this.onPressed, this.isdisabled})
+        required this.onPressed, this.isdisabled,this.style,this.textAlign})
       : super(key: key);
 
   @override
@@ -60,8 +62,8 @@ class AppButton extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
+            textAlign: textAlign ?? TextAlign.center,
+            style: style ?? TextStyle(
               color: fontColor,
               fontSize: fontSize,
               fontWeight: fontWeight,

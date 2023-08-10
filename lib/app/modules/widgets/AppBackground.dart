@@ -31,10 +31,13 @@ class AppBackground extends StatelessWidget {
                 child: Row(
 
                   children: [
+
                   if (hasIcon)...[
                     IconButton(onPressed: (){
                       Get.back();
                     }, icon: Icon(Icons.arrow_back_ios,color: secondaryColor,)),
+                  ]else...[
+                    Expanded(child: Container()),
                   ],
                   Expanded(child: Container()),
                   SvgPicture.asset(logo,fit: BoxFit.fill,),

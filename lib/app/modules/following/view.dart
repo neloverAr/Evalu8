@@ -16,7 +16,21 @@ class AllFollowingPage extends StatelessWidget {
         itemCount: 6,
         separatorBuilder: (BuildContext context, int index) => SizedBox(height: 10,),
         itemBuilder: (BuildContext context, int index) {
-          return FollowItem(index: index,);
+          return Dismissible(
+            key: Key(index.toString()),
+            background: Container(
+              color: Colors.red,
+              padding: EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 0.0),
+              child: Icon(Icons.delete,
+                color: Colors.white,
+              ),
+            ),
+            direction: DismissDirection.horizontal,
+            onDismissed: (direction) {
+            },
+            child: FollowItem(index: index,),
+          );
+         // return FollowItem(index: index,);
         },
       );
     });

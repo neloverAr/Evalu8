@@ -25,3 +25,24 @@ extension HexColor on Color {
       '${green.toRadixString(16).padLeft(2, '0')}'
       '${blue.toRadixString(16).padLeft(2, '0')}';
 }
+class ValidatorUtils {
+  static String? validatePassword(String value) {
+    RegExp regex =
+    RegExp(
+        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{10,}$');
+    if (!regex.hasMatch(value)) {
+      return "\u29bf Password should be at least 10 characters long.\n\u29bf Password must include numbers,\n\u29bf Upper case letter,\n\u29bf Lower case letter letters\n\u29bf special characters.";
+    } else {
+      return null;
+    }
+  }
+  static String? validateEmail(String value) {
+    RegExp regex =
+    RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    if (!regex.hasMatch(value)) {
+      return 'Enter valid email';
+    } else {
+      return null;
+    }
+  }
+}

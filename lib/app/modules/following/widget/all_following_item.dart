@@ -22,9 +22,12 @@ class FollowItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ClipRRect(
-            child: Image.asset(product,width: 90,height: 90,fit: BoxFit.cover,),
-            borderRadius: BorderRadius.circular(12),
+          Padding(
+            padding: const EdgeInsets.only(right: 24),
+            child: ClipRRect(
+              child: Image.asset(product,width: 90,height: 90,fit: BoxFit.cover,),
+              borderRadius: BorderRadius.circular(12),
+            ),
           ),
           Column(
             children: [
@@ -48,7 +51,7 @@ class FollowItem extends StatelessWidget {
               )
             ],
           ),
-          SvgPicture.asset(checked_icon,color: primaryColor,)
+         Spacer()
         ],
       ),
     );

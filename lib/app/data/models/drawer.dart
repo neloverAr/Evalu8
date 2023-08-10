@@ -1,4 +1,5 @@
 import 'package:evalu8/app/core/values/icons.dart';
+import 'package:evalu8/app/routes/pages_routes.dart';
 
 enum AppDrawer {
   home,
@@ -49,6 +50,50 @@ enum AppDrawer {
         return phone;
       case AppDrawer.looOut:
         return logout;
+      default:
+        return '';
+    }
+  }
+  int get id {
+    switch (this) {
+      case AppDrawer.home:
+        return 0;
+      case AppDrawer.profile:
+        return 1;
+      case AppDrawer.reviews:
+        return 2;
+      case AppDrawer.settings:
+        return 3;
+      case AppDrawer.aboutUs:
+        return 4;
+      case AppDrawer.support:
+        return 5;
+      case AppDrawer.specifyResult:
+        return 6;
+      case AppDrawer.looOut:
+        return 7;
+      default:
+        return 8;
+    }
+  }
+  String get navigateTo {
+    switch (this) {
+      case AppDrawer.home:
+        return AppRoutes.home;
+      case AppDrawer.profile:
+        return AppRoutes.profile;
+      case AppDrawer.reviews:
+        return AppRoutes.allMyReviews;
+      case AppDrawer.settings:
+        return AppRoutes.settings;
+      case AppDrawer.aboutUs:
+        return AppRoutes.aboutUs;
+      case AppDrawer.support:
+        return '';
+      case AppDrawer.specifyResult:
+        return '';
+      case AppDrawer.looOut:
+        return '';
       default:
         return '';
     }

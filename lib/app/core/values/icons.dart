@@ -23,11 +23,11 @@ const close = "${baseUrl}close.svg";
 const phone = "${baseUrl}phone.svg";
 const logout = "${baseUrl}logout.svg";
 const profile_person = "${baseUrl}profile_person.svg";
-
 const unSelected_girl = "${baseUrl}girl.svg";
 const  unSelected_boy = "${baseUrl}boy.svg";
 const selected_girl = "${baseUrl}selected_girl.svg";
 const selected_boy = "${baseUrl}selected_boy.svg";
+const plus_icon = "${baseUrl}plus.svg";
 
 
 

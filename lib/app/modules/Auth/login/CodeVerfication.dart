@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../core/values/colors.dart';
 import '../../widgets/AppBackground.dart';
 import '../../widgets/AppButton.dart';
+import 'controller.dart';
 
 class CodeVerficationPage extends StatelessWidget {
-  const CodeVerficationPage({Key? key}) : super(key: key);
-
-  @override
+   CodeVerficationPage({Key? key}) : super(key: key);
+  LogInController controller = Get.put(LogInController());
   Widget build(BuildContext context) {
+    controller.startTimer();
     return Scaffold(body: SingleChildScrollView(
       child: Column(
         //fit: StackFit.loose,
@@ -42,6 +45,7 @@ class CodeVerficationPage extends StatelessWidget {
                               height: 16,
                             ),
                             PinCodeTextField(
+                              key: ,
                               length: 5,
                               obscureText: false,
                               animationType: AnimationType.fade,
@@ -61,9 +65,13 @@ class CodeVerficationPage extends StatelessWidget {
                               backgroundColor: Colors.white,
                               enableActiveFill: true,
                               onCompleted: (v) {
-                                print("Completed");
+                                controller.isDisable = false;
+                                controller.update();
                               },
                               onChanged: (value) {
+                                if (value){
+
+                                }
                                 print(value);
                               },
                               beforeTextPaste: (text) {
@@ -74,26 +82,57 @@ class CodeVerficationPage extends StatelessWidget {
                               },
                               appContext: context,
                             ),
+
                           ],),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(24),
-                        child: AppButton(
-                          width: double.infinity,
-                          fontWeight: FontWeight.w800,
-                          elevation: 0,
-                          fontSize: 18,
-                          color: primaryColor,
-                          borderRadius: 12,
-                          isLoading: false,
-                          title: "Verify",
-                          onPressed: () {},
-                        ),
-                      ),
-                      Text('1:00'),
-                      SizedBox(height: 16,),
-                      Text('Resend code'),
-                      SizedBox(height: 16,),
+                      GetBuilder<LogInController>(builder: (controller){
+                        return  Padding(
+                          padding: const EdgeInsets.all(24),
+                          child: AppButton(
+                            isdisabled: controller.isDisable,
+                            width: double.infinity,
+                            fontWeight: FontWeight.w800,
+                            elevation: 0,
+                            fontSize: 18,
+                            color: controller.isDisable ?primaryColor.withOpacity(0.5) :primaryColor,
+                            borderRadius: 12,
+                            isLoading: false,
+                            title: "Verify",
+                            onPressed: () {
+                              if (controller.isDisable == false){
+
+                              }
+                            },
+                          ),
+                        );
+                      }),
+
+                      GetBuilder<LogInController>(builder: (controller){
+                        return controller.start != 0
+                            ?  Text(
+                          '00:${controller.start.toString()}',
+                          style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        )
+                            : InkWell(
+                          onTap: () {
+                            controller.start = 59;
+                            controller.isLoading = true;
+                            controller.startTimer();
+                            controller.update();
+                          },
+                          child: const Text(
+                            "Request again",
+                            style: TextStyle(
+                                color: Colors.yellow,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        );
+                      }),
+                      const SizedBox(height: 10),
                     ],
                   )),
             ),

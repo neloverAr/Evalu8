@@ -1,56 +1,74 @@
 import 'package:evalu8/app/modules/widgets/AppBackground.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../core/values/colors.dart';
+import '../../../routes/pages_routes.dart';
 import '../../widgets/AppButton.dart';
 import '../widgets/custom_textfield.dart';
+import 'controller.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  SignUpPage({Key? key}) : super(key: key);
+  SignUpController controller = Get.put(SignUpController());
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SingleChildScrollView(
-      child: Column(
-        //fit: StackFit.loose,
-        children: [
-           AppBackground(hasIcon: true,),
-          Center(child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Container(
-              child: Card(
-                  elevation: 3,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0),
-                  ),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 60,
-                      ),
-                      CustomTextField(TextFieldEnum.fullName),
-                      CustomTextField(TextFieldEnum.email),
-                      CustomTextField(TextFieldEnum.password),
-                      CustomTextField(TextFieldEnum.confirmPassword),
-                      Padding(
-                        padding: const EdgeInsets.all(24),
-                        child: AppButton(
-                          width: double.infinity,
-                          fontWeight: FontWeight.w800,
-                          elevation: 0,
-                          fontSize: 18,
-                          color: primaryColor,
-                          borderRadius: 12,
-                          isLoading: false,
-                          title: "Sign Up",
-                          onPressed: () {},
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Form(
+          key: controller.key,
+          child: Column(
+            //fit: StackFit.loose,
+            children: [
+              AppBackground(
+                hasIcon: true,
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Container(
+                    child: Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
                         ),
-                      ),
-                    ],
-                  )),
-            ),
-          ),),
-        ],
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 60,
+                            ),
+                            CustomTextField(TextFieldEnum.fullName),
+                            CustomTextField(TextFieldEnum.email),
+                            CustomTextField(TextFieldEnum.password),
+                            CustomTextField(TextFieldEnum.confirmPassword),
+                            Padding(
+                              padding: const EdgeInsets.all(24),
+                              child: AppButton(
+                                width: double.infinity,
+                                fontWeight: FontWeight.w800,
+                                elevation: 0,
+                                fontSize: 18,
+                                color: primaryColor,
+                                borderRadius: 12,
+                                isLoading: false,
+                                title: "Sign Up",
+                                onPressed: () {
+                                  if (controller.key.currentState!.validate()) {
+                                    Get.offAllNamed(AppRoutes.main);
+                                  }
+                                },
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-    ),);
+    );
   }
 }
