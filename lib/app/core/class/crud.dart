@@ -213,7 +213,7 @@ class Crud{
         return const Left(StatusRequest.offlineFailure);
 
       }catch(e){
-        print(e);
+        //print(e);
         return const Left(StatusRequest.serverException);
       }
 
