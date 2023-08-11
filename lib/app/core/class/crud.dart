@@ -37,7 +37,6 @@ class Crud{
    }catch(_){
      return const Left(StatusRequest.serverException);
    }
-
   }
   /////////
   Future<Either<StatusRequest, Map>> postDataWithHeaders(String linkUrl,Map data,Map<String, String> headers) async {
