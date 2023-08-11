@@ -38,10 +38,10 @@ class SignUpPage extends StatelessWidget {
                             const SizedBox(
                               height: 60,
                             ),
-                            CustomTextField(TextFieldEnum.fullName),
-                            CustomTextField(TextFieldEnum.email),
-                            CustomTextField(TextFieldEnum.password),
-                            CustomTextField(TextFieldEnum.confirmPassword),
+                            CustomTextField(type: TextFieldEnum.fullName,),
+                            CustomTextField(type:TextFieldEnum.email),
+                            CustomTextField(type: TextFieldEnum.password),
+                            CustomTextField(type: TextFieldEnum.confirmPassword),
                             Padding(
                               padding: const EdgeInsets.all(24),
                               child: AppButton(

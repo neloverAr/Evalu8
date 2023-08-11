@@ -1,10 +1,13 @@
 import 'package:evalu8/app/modules/allMyReviews/view.dart';
+import 'package:evalu8/app/modules/edit_password/view.dart';
+import 'package:evalu8/app/modules/edit_profile/view.dart';
 import 'package:evalu8/app/modules/gender/view.dart';
 import 'package:evalu8/app/modules/home/view.dart';
 import 'package:evalu8/app/modules/on_boarding_screen/view.dart';
 import 'package:evalu8/app/modules/productReviews/view.dart';
 import 'package:evalu8/app/modules/product_analysis/view.dart';
 import 'package:evalu8/app/modules/product_details/view.dart';
+import 'package:evalu8/app/modules/profile/view.dart';
 import 'package:evalu8/app/modules/splash/view.dart';
 import 'package:get/get.dart';
 import '../modules/Auth/login/CodeVerfication.dart';
@@ -67,6 +70,23 @@ class AppPages {
       page: () => AllMyReviews(
       ),
     ),
+    GetPage(
+      name: AppRoutes.profile,
+      page: () => ViewProfilePage(
+      ),
+    ),
+    GetPage(
+      name: AppRoutes.editProfile,
+      page: () => EditProfilePage(
+
+      ),
+    ),
+    GetPage(
+      name: AppRoutes.editPassword,
+      page: () => EditPasswordPage(
+
+      ),
+    ),
   ];
 }
 
@@ -93,5 +113,10 @@ class AppRoutes {
   static const String allReviews = '/allReviews';
   static const String productAnalysis= '/productAnalysis';
   static const String allMyReviews = '/allMyReviews';
+  static const String editProfile = '/editProfile';
+
+  static const String editPassword = '/editPassword';
+
+
 
 }

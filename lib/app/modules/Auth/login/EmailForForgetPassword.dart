@@ -28,7 +28,7 @@ class EmailForForgetPasswordPage extends StatelessWidget {
                       const SizedBox(
                         height: 74,
                       ),
-                      CustomTextField(TextFieldEnum.email),
+                      CustomTextField(type:TextFieldEnum.email),
                       Padding(
                         padding: const EdgeInsets.all(24),
                         child: AppButton(

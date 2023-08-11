@@ -8,27 +8,33 @@ import '../login/controller.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextFieldEnum type;
-
-  CustomTextField(this.type);
+  final bool? isShowTitle;
+  final String? label;
+  final String? hintText;
+  CustomTextField({required this.type, this.isShowTitle, this.label,this.hintText});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16, right: 24, left: 24),
+      padding: const EdgeInsets.only(bottom: 16, right: 16, left: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            type.title,
-            style: const TextStyle(
-                color: Colors.black, fontWeight: FontWeight.w400, fontSize: 18),
-          ),
+          Visibility(
+              visible: isShowTitle ?? true,
+              child: Text(
+                type.title,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18),
+              )),
           const SizedBox(
             height: 4,
           ),
           Container(
             child: TextFormField(
-              autovalidateMode: (AutovalidateMode.onUserInteraction) ,
+              autovalidateMode: (AutovalidateMode.onUserInteraction),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'this field required';
@@ -49,7 +55,11 @@ class CustomTextField extends StatelessWidget {
                 }
               },
               cursorColor: Colors.black,
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
+                  label: Visibility(
+                    child: Text('${this.label ?? ''}'),
+                    visible:this.label != null,
+                  ),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: EEEEEEColor, width: 1),
                   ),
@@ -78,7 +88,11 @@ enum TextFieldEnum {
   email,
   password,
   confirmPassword,
-  userName;
+  userName,
+  firstName,
+  lastName,
+  currentPassword,
+  newPassword,confirmNewPassword;
 }
 
 extension PlaceholderExtension on TextFieldEnum {
@@ -94,6 +108,8 @@ extension PlaceholderExtension on TextFieldEnum {
         return '';
       case TextFieldEnum.userName:
         return '';
+      default:
+        return '';
     }
   }
 
@@ -108,7 +124,17 @@ extension PlaceholderExtension on TextFieldEnum {
       case TextFieldEnum.confirmPassword:
         return 'Confirm Password';
       case TextFieldEnum.userName:
-        return 'User Name';
+        return 'UserName';
+      case TextFieldEnum.firstName:
+        return 'First Name';
+      case TextFieldEnum.lastName:
+        return 'Last Name';
+      case TextFieldEnum.newPassword:
+        return 'New Password';
+      case TextFieldEnum.currentPassword:
+        return 'Current Password';
+      case TextFieldEnum.confirmNewPassword:
+        return 'Confirm New Password';
     }
   }
 }

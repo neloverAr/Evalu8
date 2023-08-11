@@ -38,8 +38,8 @@ class LoginPage extends StatelessWidget {
                             const SizedBox(
                               height: 74,
                             ),
-                            CustomTextField(TextFieldEnum.userName),
-                            CustomTextField(TextFieldEnum.password),
+                            CustomTextField(type:TextFieldEnum.userName),
+                            CustomTextField(type:TextFieldEnum.password),
                             Row(
                               children: [
                                 Spacer(),

@@ -25,7 +25,7 @@ class AppDrawerWidget extends StatelessWidget {
         backgroundColor: Colors.white,
         shadowColor: Colors.black,
         child: Container(
-          padding: EdgeInsetsDirectional.all(24),
+          padding: EdgeInsetsDirectional.symmetric(horizontal: 24,vertical: 50),
           decoration: BoxDecoration(
             image:
                 DecorationImage(image: AssetImage(drawer), fit: BoxFit.cover),

@@ -45,7 +45,6 @@ class CodeVerficationPage extends StatelessWidget {
                               height: 16,
                             ),
                             PinCodeTextField(
-                              key: ,
                               length: 5,
                               obscureText: false,
                               animationType: AnimationType.fade,
@@ -69,10 +68,6 @@ class CodeVerficationPage extends StatelessWidget {
                                 controller.update();
                               },
                               onChanged: (value) {
-                                if (value){
-
-                                }
-                                print(value);
                               },
                               beforeTextPaste: (text) {
                                 print("Allowing to paste $text");
