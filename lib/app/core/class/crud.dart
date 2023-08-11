@@ -211,7 +211,6 @@ class Crud{
         }
         //else
         return const Left(StatusRequest.offlineFailure);
-
       }catch(e){
         print(e);
         return const Left(StatusRequest.serverException);
