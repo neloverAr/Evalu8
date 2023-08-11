@@ -42,6 +42,7 @@ class Crud{
   /////////
   Future<Either<StatusRequest, Map>> postDataWithHeaders(String linkUrl,Map data,Map<String, String> headers) async {
     try{
+
       if(await checkInternet()){
         var response = await http.post(Uri.parse(linkUrl),
             body: data,
