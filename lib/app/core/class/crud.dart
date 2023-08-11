@@ -216,7 +216,5 @@ class Crud{
         //print(e);
         return const Left(StatusRequest.serverException);
       }
-
-
   }
 }
