@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "855101682637",
+    "project_id": "evalu8-f56d9",
+    "storage_bucket": "evalu8-f56d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855101682637:android:746ee8ef983b5af5f78a84",
+        "android_client_info": {
+          "package_name": "com.app.evalu8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855101682637-1p0rs490c550co1krme97igtk4iq78e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlr50URngX-ZL5YdmEEO59Htgp8S2iI7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855101682637-1p0rs490c550co1krme97igtk4iq78e5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "855101682637-am5kogt6jj1orj6lm9d3u343patujjul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.evalu8"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

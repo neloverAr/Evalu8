@@ -60,19 +60,19 @@ class CustomTextField extends StatelessWidget {
                     child: Text('${this.label ?? ''}'),
                     visible:this.label != null,
                   ),
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                     borderSide: BorderSide(color: EEEEEEColor, width: 1),
                   ),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: EEEEEEColor, width: 1),
                   ),
-                  disabledBorder: OutlineInputBorder(
+                  disabledBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: EEEEEEColor, width: 1),
                   ),
-                  errorBorder: OutlineInputBorder(
+                  errorBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: EEEEEEColor, width: 1),
                   ),
-                  enabledBorder: OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: EEEEEEColor, width: 1),
                   )),
             ),

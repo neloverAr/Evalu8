@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app/routes/pages_routes.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -10,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return GetMaterialApp(
       //initialRoute: '/OnBoarding',
       getPages: AppPages.routes,
       title: 'Flutter Demo',
