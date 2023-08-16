@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import '../../core/values/icons.dart';
 import '../home/widget/custom_app_bar_widget.dart';
 import 'controller.dart';
 
@@ -19,7 +20,18 @@ class MainNavigationLayout extends StatelessWidget {
     return GetBuilder<MainNavigationController>(builder: (_) {
       return Scaffold(
         key: controller.key,
-        appBar: CustomAppBar(),
+        appBar: AppBar(
+          title: SvgPicture.asset(
+            logo,
+          ),
+          leading: IconButton(icon: Icon(Icons.menu,color: Colors.black,),onPressed: (){
+            // controller.scaffoldKey.currentState!.op;
+            controller.key.currentState?.openDrawer();
+          },),
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
+        //CustomAppBar(),
         drawer: AppDrawerWidget(),
         body: SafeArea(
           child: Stack(children: [

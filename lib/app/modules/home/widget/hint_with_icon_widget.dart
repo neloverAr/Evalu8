@@ -18,13 +18,13 @@ class HintWithIconWidget extends StatelessWidget {
           color: object?.index == 0 ? primaryColor : secondaryColor,
           borderRadius: BorderRadius.circular(16)),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: SvgPicture.asset(object?.image ?? section_one_comment,fit: BoxFit.cover,),
           ),
-          Text(object?.title ?? "",style: object?.index == 0 ?  AppTextStyles.r10Black : AppTextStyles.r10White,)
+          Text(object?.title ?? "",textAlign: TextAlign.justify,style: object?.index == 0 ?  AppTextStyles.r10Black : AppTextStyles.r10White,)
         ],
       ),
     );

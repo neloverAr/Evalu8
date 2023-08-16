@@ -73,7 +73,10 @@ class HomePage extends StatelessWidget {
               ,const SizedBox(
                 height: 10,
               ),
-              ProductsWidget()
+              ProductsWidget(),
+              const SizedBox(
+                height: 100,
+              ),
             ],
           ),
         ),
@@ -103,8 +106,10 @@ class HomePage extends StatelessWidget {
         ),
         Row(
           children: List.generate(Hint.generateListOfHint().length, (index) {
-            return HintWithIconWidget(
-              object: Hint.generateListOfHint()[index],
+            return Expanded(
+              child: HintWithIconWidget(
+                object: Hint.generateListOfHint()[index],
+              ),
             );
           }),
         )
