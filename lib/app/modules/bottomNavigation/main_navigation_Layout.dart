@@ -42,7 +42,7 @@ class MainNavigationLayout extends StatelessWidget {
           end: 10,
           child:
                Container(
-          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
