@@ -17,6 +17,7 @@ class HintWithIconWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: object?.index == 0 ? primaryColor : secondaryColor,
           borderRadius: BorderRadius.circular(16)),
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
