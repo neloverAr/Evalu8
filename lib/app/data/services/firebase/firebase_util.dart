@@ -1,31 +1,54 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '../../../modules/Auth/signup/model/user.dart';
 
 class FirebaseUtil {
   static FirebaseUtil shared = FirebaseUtil();
+  UserCredential? userCredential;
 
-  final db = FirebaseFirestore.instance;
-  FirebaseAuth auth = FirebaseAuth.instance;
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
-//This function registers a new user with auth and then calls the function createUser
-  Future<void> registerUser(AppUser user) async {
-    //Create the user with auth
-    UserCredential result = await auth.createUserWithEmailAndPassword(
-        email: (user.email), password: (user.password));
-    //Create the user in firestore with the user data
-    _addUser(user);
+  Future<void> registerUser(AppUser? appUser,
+      {required Function() onSuccess,
+      required Function(String erroressage) onError}) async {
+    try {
+      // Register user with email and password
+      userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: appUser?.email ?? "",
+        password: appUser?.password ?? "",
+      );
+
+      print("User registered successfully!");
+      onSuccess();
+    } catch (error) {
+      print("Error registering user: $error");
+      onError("Error registering user: $error");
+    }
   }
-  Future<void> _addUser(AppUser user) {
-    // Call the user's CollectionReference to add a new user
-    return users
-        .add({
-      'full_name': user.fullName, // John Doe
-      'company': "company", // Stokes and Sons
-      'age': "age" // 42
-    })
-        .then((value) => print("User Added"))
-        .catchError((error) => print("Failed to add user: $error"));
+  Future<void> signIn(String emailAddress,String password,{required Function() onSuccess,
+  required Function(String erroressage) onError}) async{
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailAddress,
+          password: password
+      );
+      onSuccess();
+    } on FirebaseAuthException catch (e) {
+      onError(e.code);
+    }
+  }
+
+  Future<void> addMoreInfoForUser(AppUser? appUser,{required Function() onSuccess,
+    required Function(String erroressage) onError}) async {
+    // Get the user ID
+    String? userId = userCredential?.user?.uid;
+
+    // Store additional user information in Firestore
+    await FirebaseFirestore.instance.collection('users').doc(userId).set({
+      'fullName': appUser?.fullName ?? "",
+      'dob': appUser?.dateOfBirth ?? "",
+      'gender': appUser?.gender ?? ""
+    }).catchError((error){
+      onError(error);
+    }).then((value) => onSuccess());
   }
 }

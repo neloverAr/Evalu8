@@ -8,9 +8,11 @@ import '../../core/values/icons.dart';
 import '../../core/values/images_path.dart';
 
 class AppBackground extends StatelessWidget {
-   AppBackground({Key? key,required this.hasIcon,this.hasSkipFeature}) : super(key: key);
+   AppBackground({Key? key,required this.hasIcon,this.hasSkipFeature,this
+   .onSkipTap}) : super(key: key);
   bool hasIcon;
   bool? hasSkipFeature = false;
+  Function? onSkipTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +45,11 @@ class AppBackground extends StatelessWidget {
                   SvgPicture.asset(logo,fit: BoxFit.fill,),
                     Expanded(child: Container()),
                     if (hasSkipFeature ?? false)...[
-                    InkWell(child: Text('Skip',style: AppTextStyles.b18.copyWith(color: color707070),),onTap: (){},)
+                    InkWell(child: Text('Skip',style: AppTextStyles.b18.copyWith(color: color707070),),onTap: (){
+                     if(onSkipTap != null){
+                       onSkipTap!();
+                     }
+                    },)
                     ],
                     if (!(hasSkipFeature ?? false))...[
                       Expanded(child: Container()),

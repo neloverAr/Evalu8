@@ -1,5 +1,6 @@
 import 'package:evalu8/app/core/theme/app_text_style.dart';
 import 'package:evalu8/app/core/values/icons.dart';
+import 'package:evalu8/app/modules/Auth/signup/controller.dart';
 import 'package:evalu8/app/modules/gender/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,10 +12,8 @@ import '../../routes/pages_routes.dart';
 import '../widgets/AppBackground.dart';
 import '../widgets/AppButton.dart';
 
-class GenderSelectionPage extends StatelessWidget {
+class GenderSelectionPage extends GetView<SignUpController> {
   GenderSelectionPage({Key? key}) : super(key: key);
-  GenderSelectionController controller = Get.put(GenderSelectionController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +23,9 @@ class GenderSelectionPage extends StatelessWidget {
             AppBackground(
               hasIcon: false,
               hasSkipFeature: true,
+              onSkipTap: (){
+              controller.setGender();
+              },
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -42,7 +44,7 @@ class GenderSelectionPage extends StatelessWidget {
                         const SizedBox(
                           height: 50,
                         ),
-                        GetBuilder<GenderSelectionController>(builder: (_) {
+                        GetBuilder<SignUpController>(builder: (_) {
                           return Column(
                             children: [
                               Row(
@@ -91,8 +93,7 @@ class GenderSelectionPage extends StatelessWidget {
                                     isLoading: false,
                                     title: "Next",
                                     onPressed: () {
-                                      Get.offAllNamed(AppRoutes.dateOfBirthday);
-                                      // Get.toNamed(AppRoutes.home);
+                                      controller.setGender();
                                     },
                                   ),
                                 ),

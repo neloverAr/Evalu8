@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'app/routes/pages_routes.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.routes,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      builder: EasyLoading.init(),
       //home: const SplashScreen(),
     );
   }

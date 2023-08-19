@@ -1,3 +1,4 @@
+import 'package:evalu8/app/modules/Auth/signup/controller.dart';
 import 'package:evalu8/app/modules/dateOfBirthday/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,14 +11,16 @@ import '../widgets/AppBackground.dart';
 import '../widgets/AppButton.dart';
 class DateOfBirthdayPage extends StatelessWidget {
    DateOfBirthdayPage({Key? key}) : super(key: key);
-   DateOfBirthdayController controller = Get.put(DateOfBirthdayController());
+   SignUpController controller = Get.find<SignUpController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: SingleChildScrollView(
       child: Column(
         //fit: StackFit.loose,
         children: [
-          AppBackground(hasIcon: false,hasSkipFeature: true,),
+          AppBackground(hasIcon: false,hasSkipFeature: true,onSkipTap: (){
+            controller.setDateOfBirthday();
+          },),
           Center(child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Container(
@@ -32,7 +35,7 @@ class DateOfBirthdayPage extends StatelessWidget {
                         height: 50,
                       ),
                       Text('What’s your Date of Birth',style: AppTextStyles.b18,),
-                      GetBuilder<DateOfBirthdayController>(builder: (_) {
+                      GetBuilder<SignUpController>(builder: (_) {
                         return  Container(
                             padding: EdgeInsets.all(15),
                             margin: EdgeInsets.all(15),
@@ -70,7 +73,8 @@ class DateOfBirthdayPage extends StatelessWidget {
                           isLoading: false,
                           title: "Next",
                           onPressed: () {
-                            Get.offAllNamed(AppRoutes.main);
+                            controller.setDateOfBirthday();
+
                           },
                         ),
                       ),
